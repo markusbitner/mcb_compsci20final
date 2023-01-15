@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+use App\Models\User;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return inertia('Welcome');
+    return inertia::render('Home');
+});
+
+Route::get('/users', function () {
+    return inertia::render('Users', [
+        'users' => User::all()->map(fn($user) => [
+            'name' => $user->name
+        ])  
+    ]);
+});
+
+Route::get('/settings', function () {
+    return inertia::render('Settings');
+});
+
+Route::post('/logout', function () {
+    dd(request('foo'));
 });
