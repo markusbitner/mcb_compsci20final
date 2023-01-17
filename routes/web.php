@@ -20,12 +20,25 @@ Route::get('/', function () {
     return inertia::render('Home');
 });
 
-Route::get('/users', function () {
+Route::get('/users/index', function () {
     return inertia::render('Users', [
-        'users' => User::all()->map(fn($user) => [
+        'users' => User::query()
+        ->when(Request::input('search'), function ($query, $search) {
+            $query->where('name', 'like', "%{$search}%");
+        })
+        ->paginate(10)
+        ->withQueryString()
+        ->through(fn($user) => [
+            'id' => $user->id,
             'name' => $user->name
-        ])  
+        ]),
+
+        'filters' => Request::only(['search'])
     ]);
+});
+
+Route::get('/users/create', function () {
+    return inertia::render('Users/Create');
 });
 
 Route::get('/settings', function () {
