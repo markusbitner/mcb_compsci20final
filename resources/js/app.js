@@ -20,9 +20,18 @@ createInertiaApp({
           `./Pages/${name}.vue`,
           import.meta.glob("./Pages/**/*.vue")
         );
+        
         page.then((module) => {
-          module.default.layout = module.default.layout || DefaultLayout;
+
+            // module.default.layout = module.default.layout || DefaultLayout;
+            // Experiment
+            if (module.default.layout === undefined) {
+                module.default.layout = DefaultLayout;
+            }
         });
+
+ 
+
         return page;
       },
     setup({ el, App, props, plugin }) {
