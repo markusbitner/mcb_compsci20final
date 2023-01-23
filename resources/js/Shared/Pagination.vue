@@ -1,3 +1,4 @@
+<!-- This page contains the paginator used for navigating the user index. -->
 <template>
     <div>
         <Component

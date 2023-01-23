@@ -1,5 +1,7 @@
 <?php
 
+//This is the routes file.
+
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -12,9 +14,19 @@ Route::middleware('auth')->group(function () {
 
 
 
+    // Route::get('/', function () {
+    //     return inertia::render('Home');
+    // });
     Route::get('/', function () {
-        return inertia::render('Home');
+        return inertia::render('Home', [
+            'can' => [
+                'createUser' => Auth::user()->can('create', User::class)
+            ]
+        ]);
     });
+
+
+
 
     Route::get('/users', function () {
         return inertia::render('Users/Index', [
@@ -60,6 +72,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/settings', function () {
         return inertia::render('Settings');
+    });
+
+    Route::get('/users/edit', function () {
+        return inertia::render('Users/Edit');
     });
 
 });

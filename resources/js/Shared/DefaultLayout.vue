@@ -1,3 +1,4 @@
+<!-- Layout used for most of the pages -->
 <template>
     <Head>
         <title>My App</title>

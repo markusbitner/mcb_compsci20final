@@ -1,3 +1,4 @@
+<!-- Nav bar component used at the top of each page -->
 <template>
     <nav>
         <ul class="flex space-x-6">
@@ -7,7 +8,7 @@
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/users" :active="$page.component == 'Users'">
+                <NavLink href="/users" :active="$page.component == 'Users/Index'">
                     Users
                 </NavLink>
             </li>
@@ -17,7 +18,7 @@
                 </NavLink>
             </li>
             <li>
-                <NavLink href="/logout" method="post">
+                <NavLink href="/logout" method="post" as="button">
                     Log Out
                 </NavLink>
             </li>

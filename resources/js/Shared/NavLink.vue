@@ -1,3 +1,4 @@
+<!-- Used for the links in the nav bar -->
 <template>
     <Link class="text-black hover:underline" :class="{ 'font-bold underline': active }">
     <slot />

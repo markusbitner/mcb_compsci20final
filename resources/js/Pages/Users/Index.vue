@@ -1,3 +1,4 @@
+<!-- Page used for navigating all users. Explained more on the home page. -->
 <template>
 
     <Head>
@@ -13,6 +14,7 @@
         <Link v-if="can.createUser" href="/users/create" class="text-blue-500 text-sm ml-3">
           New User
         </Link>
+
       </div>
 
         <input v-model="search" type="text" placeholder="Search..." />
@@ -35,7 +37,7 @@
                 </div>
               </td>
               <td v-if="user.can.edit" class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <Link :href="`/users/${user.id}/edit`" class="text-indigo-600 hover:text-indigo-900">Edit</Link>
+                <Link :href="`/users/edit`" class="text-indigo-600 hover:text-indigo-900">Edit</Link>
               </td>
             </tr>
 

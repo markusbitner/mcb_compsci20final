@@ -1,8 +1,9 @@
+<!-- Initial page where users log in with an email and password -->
 <template>
 
     <Head title="Login Page" />
 
-    
+
 
     <main class="grid place-items-center min-h-screen">
         <section class="bg-white p-8 rounded-xl max-w-md mx-auto border border-slate-300">

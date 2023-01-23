@@ -1,3 +1,4 @@
+<!-- Page used for creating new users, accessible only by those with permission on the Index page -->
 <template>
     <Head title="Create User" />
 
