@@ -14,7 +14,7 @@
         Welcome to the overly simple app showcasing the raw power of Inertia!
         This site has little features, including log-in and authentication, the creation of users, and the display of said users in a neat list. But do not be deceived... this project took me countless hours! Most of it may be exactly the same code as demonstrated in the tutorial, but it was a learning process nonetheless.
         <br><br>
-        What did I learn? <a href="https://php.net">PHP</a>! <a href="https://inertiajs.com">Inertia</a>! <a href="https://vuejs.org/">The Vue framework</a>! Server and client side programing! Databases! Web app development! <a href="https://tailwindcss.com/">The Tailwind CSS framework</a>! <a href="https://github.com/markusbitner/">Git version control</a>! You can see my <a href="https://github.com/markusbitner/mcb_compsci20final">code here</a>. By following along with the tutorial and constructing this website myself, I've been able to see this new language of code in action and understand it more. Even the JavaScript used in this series was entirely new to me. Now, do I completely understand every bit of code that I've written? Not entirely. Much of it is still confusing to me, but I'm learning from it nonetheless.
+        What did I learn? <Link href="https://php.net">PHP</Link>! <Link href="https://inertiajs.com">Inertia</Link>! <Link href="https://vuejs.org/">The Vue framework</Link>! Server and client side programing! Databases! Web app development! <Link href="https://tailwindcss.com/">The Tailwind CSS framework</Link>! <Link href="https://github.com/markusbitner/">Git version control</Link>! You can see my <Link href="https://github.com/markusbitner/mcb_compsci20final">code here</Link>. By following along with the tutorial and constructing this website myself, I've been able to see this new language of code in action and understand it more. Even the JavaScript used in this series was entirely new to me. Now, do I completely understand every bit of code that I've written? Not entirely. Much of it is still confusing to me, but I'm learning from it nonetheless.
         <br><br>
         Now, I'll give you a brief description of the site. Like you've already experienced, it is impossible to access the site without properly logging in with the correct email and password. On the users page, you'll find the index of all the existing users with a paginator at the bottom of the page. The search bar is completely functional, and only makes a request after you've stopped typing so as to avoid an excess of processing.
     </p>
@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-
+import { Link } from '@inertiajs/inertia-vue3';
 let props = defineProps({
     can: Object,
 });
